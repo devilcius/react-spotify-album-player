@@ -3,7 +3,6 @@
   "authors": [
     "Marcos <devilcius@gmail.com>"
   ],
-  "version": "0.0.1",
   "homepage": "https://github.com/devilcius/react-spotify-album-player.git",
   "description": "Spotify player for a specific artist's album",
   "main": "./dist/react-spotify-album-player.js",

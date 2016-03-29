@@ -70,6 +70,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            albumData: null,
 	            playerPlaceholder: '<i class="fa fa-spinner fa-spin"></li>' };
 	    },
+	    getDefaultProps: function getDefaultProps() {
+	        return {
+	            noDataFoundText: 'No data found',
+	            previewWarningText: 'Only 20 seconds preview'
+	        };
+	    },
 	    fetchAlbumData: function fetchAlbumData() {
 	        var that = this;
 	        var xhr = new XMLHttpRequest();
