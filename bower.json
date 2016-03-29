@@ -1,0 +1,31 @@
+{
+  "name": "react-spotify-album-player",
+  "authors": [
+    "Marcos <devilcius@gmail.com>"
+  ],
+  "version": "0.0.1",
+  "homepage": "https://github.com/devilcius/react-spotify-album-player.git",
+  "description": "Spotify player for a specific artist's album",
+  "main": "./dist/react-spotify-album-player.js",
+  "keywords": [
+    "react",
+	"react-component",
+	"spotify",
+	"player"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "demo",
+    "lib",
+    "node_modules",
+    "dist_modules",
+    "script",
+    "gh-pages",
+    "index.js",
+    "karma.conf.js",
+    "webpack.config.babel.js",
+    "package.json",
+    "style.css"
+  ]
+}

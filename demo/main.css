@@ -1,0 +1,152 @@
+/* TODO: insert main styles of your demo here */
+
+body {
+    background: #fefefe;
+
+    font-family: Sans-Serif;
+
+    line-height: 1.5;
+}
+
+form label {
+    display: block;
+}
+
+header {
+    position: fixed;
+    padding: 0.5em;
+    top: 0;
+
+    text-align: center;
+
+    color: #333;
+    border: 0.1em solid #bbb;
+
+    background-image: url(./images/bgnoise_lg.png);
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .description {
+    color: #888;
+}
+
+.highlight {
+    background: rgb(255, 255, 175);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.github-fork-ribbon {
+    position: fixed;
+
+    letter-spacing: 0.01em;
+}
+
+article {
+    display: block !important;
+
+    margin-top: 6em;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 768px;
+}
+
+article section {
+    margin-bottom: 2em;
+}
+
+article h2 {
+    margin-top: 2em;
+}
+
+pre {
+    background: #fafefe;
+    padding: 0.5em;
+}
+
+article .description {
+    margin: 1em;
+    padding: 1em;
+
+    max-width: 60em;
+
+    background: #fafafa;
+
+    border: 0.1em solid #eee;
+}
+
+article .description h2 {
+    margin: 0;
+}
+/* Player skin */
+section.spotify-player {
+    background-color: #f3f3f3;
+    width: 400px;
+}
+section.spotify-player ul {
+    padding: 0;
+    list-style: none;    
+}
+section.spotify-player ul li {
+    display: block;
+    margin-bottom: -1px;
+    padding: 10px 15px;   
+}
+section.spotify-player ul li span.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 10px;   
+    float: right;
+}
+section.spotify-player ul li i.fa {
+    background: url(./images/audio_icons_set.jpg) 0 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 33px;    
+    width: 25px;
+}
+section.spotify-player ul li i.fa-play {
+    background-position: -90px -42px;
+}
+section.spotify-player ul li i.fa-pause {
+    background-position: -135px -42px;
+}
+section.spotify-player .media {
+    padding: 5px;
+}
+section.spotify-player .media:first-child {
+    margin-top: 0;
+}
+section.spotify-player div.media-left {
+    padding-right: 10px;
+}
+
+section.spotify-player div.media-left,
+section.spotify-player div.media-body {
+    
+    display: table-cell;    
+    vertical-align: top;    
+}
+section.spotify-player .media, 
+section.spotify-player .media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+section.spotify-player .media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+/* Ends player skin */
