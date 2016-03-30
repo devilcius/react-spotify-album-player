@@ -115,7 +115,7 @@ var Track = React.createClass({
         var min = (ms/1000/60) << 0;
         var sec = (ms/1000) % 60;
 
-        return Math.round(min, -2) + ':' + ((Math.round(sec, -2) < 10) ? ("0" + Math.round(sec, -2)) : Math.round(sec, -2));      
+        return Math.round(min, -2) + ':' + ((Math.round(sec, -2) < 10) ? ('0' + Math.round(sec, -2)) : Math.round(sec, -2));      
     },
     playTrack: function(event) {
         var trackUrl = event.target.dataset.url;
