@@ -29,13 +29,20 @@ http://devilcius.github.io/react-spotify-album-player/
 
 ## Basic Usage
 
-```html
-<SpotifyPlayer 
-    albumName="Milo Goes to College" 
-    artistName="Descendents" 
-    noDataFoundText="No data found" 
-    previewWarningText="Only 20 seconds preview" 
-    showHeader />
+```jsx
+var React = require('react');
+var SpotifyPlayer = require('react-spotify-album-player');
+var container = document.getElementById('spotify-player');
+var ReactDOM = require('react-dom');
+ReactDOM.render(
+    <SpotifyPlayer 
+        albumName="Milo Goes to College" 
+        artistName="Descendents" 
+        noDataFoundText="No data found" 
+        previewWarningText="Only 20 seconds preview" 
+        showHeader />,
+    container
+);
 ```
 
 Attributes:

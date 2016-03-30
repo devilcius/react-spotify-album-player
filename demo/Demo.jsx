@@ -1,15 +1,5 @@
-// import React from 'react';
-
-// export default class Demo extends React.Component {
-  // render() {
-    // return <div onClick={this.easterEgg}>click me</div>;
-  // }
-  // easterEgg() {
-    // alert('easter egg');
-  // }
-// }
 import React from 'react';
-import SpotifyPlayer from '../dist/react-spotify-album-player.js';
+import SpotifyPlayer from '../dist-modules/index.js';
 
 export default class Demo extends React.Component {
   render() {
