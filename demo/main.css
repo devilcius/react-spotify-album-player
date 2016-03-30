@@ -99,7 +99,9 @@ section.spotify-player ul {
 section.spotify-player ul li {
     display: block;
     margin-bottom: -1px;
-    padding: 10px 15px;   
+    padding: 10px 15px;
+    display: block;
+    border: 1px solid #f3f3f3;
 }
 section.spotify-player ul li span.badge {
     display: inline-block;
@@ -108,7 +110,6 @@ section.spotify-player ul li span.badge {
     font-size: 12px;
     color: #fff;
     vertical-align: middle;
-    border-radius: 10px;   
     float: right;
 }
 section.spotify-player ul li i.fa {
@@ -119,10 +120,10 @@ section.spotify-player ul li i.fa {
     width: 25px;
 }
 section.spotify-player ul li i.fa-play {
-    background-position: -90px -42px;
+    background-position: -90px -48px;
 }
 section.spotify-player ul li i.fa-pause {
-    background-position: -135px -42px;
+    background-position: -135px -48px;
 }
 section.spotify-player .media {
     padding: 5px;

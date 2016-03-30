@@ -4,3 +4,4 @@ dist-modules/
 node_modules/
 nbproject/
 npm-debug.log
+bower_components/
