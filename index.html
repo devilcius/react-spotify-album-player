@@ -29,7 +29,7 @@
       <article class="pure-u-1">
         <h2>Demonstration</h2>
         <section class="demonstration">
-          <div data-reactid=".1q3639k2rk0" data-react-checksum="718313999"><div class="right github-fork-ribbon-wrapper" data-reactid=".1q3639k2rk0.0"><div class="github-fork-ribbon" data-reactid=".1q3639k2rk0.0.0"><a href="https://github.com/devilcius/react-spotify-album-player" data-reactid=".1q3639k2rk0.0.0.0">Fork me on GitHub</a></div></div><p data-reactid=".1q3639k2rk0.1">Click on play button to preview a song.</p><div data-reactid=".1q3639k2rk0.2"><i class="fa fa-spinner fa-spin"></li></div></div>
+          <div data-reactid=".1shrhq3hreo" data-react-checksum="-1512660839"><div class="right github-fork-ribbon-wrapper" data-reactid=".1shrhq3hreo.0"><div class="github-fork-ribbon" data-reactid=".1shrhq3hreo.0.0"><a href="https://github.com/devilcius/react-spotify-album-player" data-reactid=".1shrhq3hreo.0.0.0">Fork me on GitHub</a></div></div><p data-reactid=".1shrhq3hreo.1">Click on play button to preview a song.</p><div data-reactid=".1shrhq3hreo.2"><i class="fa fa-spinner fa-spin"></li></div></div>
         </section>
 
         <h2>Documentation</h2>
@@ -38,25 +38,32 @@
 </code></pre><p><span>For bower usage,</span></p><pre><code class="language-html">&lt;script src=&quot;path/to/react.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;path/to/react-spotify-album-player/dist/react-spotify-album-player.js&quot;&gt;&lt;/script&gt;
 </code></pre><p><span>NPM:</span></p><pre><code>npm install react-spotify-album-player
-</code></pre><h1><span>Demo</span></h1><p><a href="http://devilcius.github.io/react-spotify-album-player/"><span>http://devilcius.github.io/react-spotify-album-player/</span></a></p><h2><span>Basic Usage</span></h2><pre><code class="language-html">&lt;SpotifyPlayer 
-    albumName=&quot;Milo Goes to College&quot; 
-    artistName=&quot;Descendents&quot; 
-    noDataFoundText=&quot;No data found&quot; 
-    previewWarningText=&quot;Only 20 seconds preview&quot; 
-    showHeader /&gt;
+</code></pre><h2><span>Demo</span></h2><p><a href="http://devilcius.github.io/react-spotify-album-player/"><span>http://devilcius.github.io/react-spotify-album-player/</span></a></p><h2><span>Basic Usage</span></h2><pre><code class="language-jsx">var React = require(&#x27;react&#x27;);
+var SpotifyPlayer = require(&#x27;react-spotify-album-player&#x27;);
+var container = document.getElementById(&#x27;spotify-player&#x27;);
+var ReactDOM = require(&#x27;react-dom&#x27;);
+ReactDOM.render(
+    &lt;SpotifyPlayer 
+        albumName=&quot;Milo Goes to College&quot; 
+        artistName=&quot;Descendents&quot; 
+        noDataFoundText=&quot;No data found&quot; 
+        previewWarningText=&quot;Only 20 seconds preview&quot; 
+        showHeader /&gt;,
+    container
+);
 </code></pre><p><span>Attributes:</span></p><ul><li><code>albumName</code><span>: Name of the release, mandatory</span></li><li><code>artistName</code><span>: Name of the artist, mandatory</span></li><li><code>noDataFoundText</code><span>: Text to display when album is not found. Default: </span><em><span>&quot;No data found&quot;</span></em><span>.</span></li><li><code>previewWarningText</code><span>: Text to display when hovering play button. Default: </span><em><span>&quot;Only 20 seconds preview&quot;</span></em><span>.</span></li><li><code>showHeader</code><span>: Shows playlist header, with cover thumbnail, album name and album release year. Default: </span><code>false</code><span>;</span></li></ul><h2><span>Todo</span></h2><ul><li><span>Play whole songs in case user has an spotify account</span></li><li><span>Sanity checks in xhr calls</span></li><li><span>Error handling in xhr calls</span></li></ul><h2><span>License</span></h2><p><em><span>react-spotify-album-player</span></em><span> is available under MIT. See LICENSE for more details.</span></p></div></div>
         </section>
       </article>
     </div>
 
     
-      <script src="manifest.e7c34c09fefc9ba13a51.js"></script>
+      <script src="manifest.ed94e99c5aa55bc32e67.js"></script>
     
       <script src="vendors.a288148a72d05bc85e55.js"></script>
     
       <script src="style.24c27c71acf49bd16cfa.js"></script>
     
-      <script src="app.ef3f8efcc1a6bac876a7.js"></script>
+      <script src="app.273a9bf643197d5b8c7d.js"></script>
     
   </body>
 </html>
