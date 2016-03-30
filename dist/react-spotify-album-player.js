@@ -82,7 +82,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var url = 'https://api.spotify.com/v1/search';
 	        var queryString = '?q=album:' + this.props.albumName + ' artist:' + this.props.artistName;
 	        queryString += '&type=album';
-	        xhr.open('get', encodeURI(url + queryString));
+	        xhr.open('get', url + queryString);
 	        xhr.onload = function () {
 	            var response = JSON.parse(xhr.responseText);
 	            if (response.albums.items.length > 0) {
