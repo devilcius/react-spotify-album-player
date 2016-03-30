@@ -23,7 +23,7 @@ NPM:
 npm install react-spotify-album-player
 ```
 
-# Demo
+## Demo
 
 http://devilcius.github.io/react-spotify-album-player/
 
