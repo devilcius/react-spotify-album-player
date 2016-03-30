@@ -14,7 +14,7 @@ For bower usage,
 
 ```html
 <script src="path/to/react.js"></script>
-<script src="path/to/react-spotify-album-player/index.js"></script>
+<script src="path/to/react-spotify-album-player/dist/react-spotify-album-player.js"></script>
 ```
 
 NPM:
@@ -23,11 +23,19 @@ NPM:
 npm install react-spotify-album-player
 ```
 
+# Demo
+
+http://devilcius.github.io/react-spotify-album-player/
 
 ## Basic Usage
 
 ```html
-<SpotifyPlayer albumName="Milo Goes to College" artistName="Descendents" noDataFoundText="No data found" previewWarningText="Only 20 seconds preview" showHeader />
+<SpotifyPlayer 
+    albumName="Milo Goes to College" 
+    artistName="Descendents" 
+    noDataFoundText="No data found" 
+    previewWarningText="Only 20 seconds preview" 
+    showHeader />
 ```
 
 Attributes:
@@ -37,6 +45,12 @@ Attributes:
 * `noDataFoundText`: Text to display when album is not found. Default: _"No data found"_.
 * `previewWarningText`: Text to display when hovering play button. Default: _"Only 20 seconds preview"_.
 * `showHeader`: Shows playlist header, with cover thumbnail, album name and album release year. Default: `false`;
+
+## Todo
+
+- [ ] Play whole songs in case user has an spotify account
+- [ ] Sanity checks in xhr calls
+- [ ] Error handling in xhr calls
 
 ## License
 
