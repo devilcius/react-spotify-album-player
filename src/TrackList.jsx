@@ -4,11 +4,16 @@ import Track from './Track';
 var TrackList = React.createClass({
   getDefaultProps: function() {
     return {
-      tracks: []
+      tracks: [],
+      updateTrackPlayingStatus: undefined
     }
   },
   propTypes: {
-    tracks: React.PropTypes.array
+    tracks: React.PropTypes.array,
+    updateTrackPlayingStatus: React.PropTypes.func
+  },
+  trackChangedStatus: function(isPlaying, audioTrack, spotifyTrack) {
+    this.props.updateTrackPlayingStatus(isPlaying, audioTrack, spotifyTrack);
   },
   render: function () {
     var that = this;
@@ -16,6 +21,7 @@ var TrackList = React.createClass({
       return(
         <Track
           key={index}
+          onPlayingStatusChange={that.trackChangedStatus}
           tooltip={that.props.previewWarningText}
           track={track}
           />

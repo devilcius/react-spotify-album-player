@@ -35,23 +35,30 @@ var SpotifyPlayer = require('react-spotify-album-player');
 var container = document.getElementById('spotify-player');
 var ReactDOM = require('react-dom');
 ReactDOM.render(
-    <SpotifyPlayer 
-        albumName="Milo Goes to College" 
-        artistName="Descendents" 
-        noDataFoundText="No data found" 
-        previewWarningText="Only 20 seconds preview" 
+    <SpotifyPlayer
+        albumName="Milo Goes to College"
+        artistName="Descendents"
+        noDataFoundText="No data found"
+        previewWarningText="Only 20 seconds preview"
         showHeader />,
     container
 );
 ```
+## Required options:
+Property			|	Type		|	Description
+:-----------------------|:--------------|:--------------------------------
+albumName 				|	string		|	 Release's name
+artistName 				|	string		|	 Artist's name
 
-Attributes:
+### Further options:
 
-* `albumName`: Name of the release, mandatory
-* `artistName`: Name of the artist, mandatory
-* `noDataFoundText`: Text to display when album is not found. Default: _"No data found"_.
-* `previewWarningText`: Text to display when hovering play button. Default: _"Only 20 seconds preview"_.
-* `showHeader`: Shows playlist header, with cover thumbnail, album name and album release year. Default: `false`;
+Property			|	Type		|	Default | Description
+:-----------------------|:--------------|:--------|:--------------------------------
+onTrackPlayed 				|	func			|	`undefined` | track played handler: `function(audioTrack, spotifyTrack) {}`
+onTrackPaused 				|	func |	`undefined`			|	 track paused handler: `function(audioTrack, spotifyTrack) {}`
+noDataFoundText 			|	string		| _No data found_ |	 placeholder displayed when there are no matching search results values
+previewWarningText 			|	string		| _Only 20 seconds preview_ |	 placeholder preview audio file warning
+showHeader 				|	bool		| `false` |	 whether to show player header
 
 ## Todo
 
@@ -62,4 +69,3 @@ Attributes:
 ## License
 
 *react-spotify-album-player* is available under MIT. See LICENSE for more details.
-

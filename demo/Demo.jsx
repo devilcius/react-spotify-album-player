@@ -7,8 +7,9 @@ export default class Demo extends React.Component {
 		super(props);
 		this.updateRecord = this.updateRecord.bind(this);
 		this.state = {
-			albumName: 'Reign in blood',
-			artistName: 'Slayer'
+			albumName: 'Milo Goes to College',
+			artistName: 'Descendents',
+			spotifyUri: null
 		};
 	}
 	updateRecord(event) {
@@ -17,6 +18,12 @@ export default class Demo extends React.Component {
 		var release = React.findDOMNode(this.refs.release).value;
 		this.setState({artistName: artist, albumName: release});
 	}
+	setTrackInfo(audioTrack, spotifyTrack) {
+		this.setState({spotifyUri: spotifyTrack.uri});
+	}
+	clearTrackInfo() {
+		this.setState({spotifyUri: null});
+	}
 	render() {
 		return	(
 			<div className="demo-container">
@@ -24,23 +31,32 @@ export default class Demo extends React.Component {
 					albumName={this.state.albumName}
 					artistName={this.state.artistName}
 					noDataFoundText="No data found"
+					onTrackPaused={this.clearTrackInfo.bind(this)}
+					onTrackPlayed={this.setTrackInfo.bind(this)}
 					previewWarningText="Only 20 seconds preview"
 					showHeader />
-				<form onSubmit={this.updateRecord}>
-					<input
-						placeholder="artist name"
-						ref="artist"
-						required
-						type="text"
-						/>
-					<input
-						placeholder="release name"
-						ref="release"
-						required
-						type="text"
-						/>
-					<button >Update</button>
-				</form>
+				<div className="form-container">
+					<form onSubmit={this.updateRecord}>
+						<input
+							placeholder="artist name"
+							ref="artist"
+							required
+							type="text"
+							/>
+						<input
+							placeholder="release name"
+							ref="release"
+							required
+							type="text"
+							/>
+						<button >Update</button>
+					</form>
+					<div className="extra-info">
+						<hr/>
+						<h5>On playing event:</h5>
+						Spotify URI: <strong>{this.state.spotifyUri}</strong>
+					</div>
+				</div>
 			</div>
 		);
 	}

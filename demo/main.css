@@ -92,12 +92,12 @@ article .description h2 {
   width: 100%;
 }
 .demo-container section.spotify-player,
-.demo-container form {
+.demo-container .form-container {
   display: inline-block;
   padding: 7px;
   width: 40%;
 }
-.demo-container form {
+.demo-container .form-container {
   vertical-align: top;
 }
 .demo-container form input,
@@ -114,6 +114,9 @@ article .description h2 {
 }
 .demo-container form button{
   float: right;
+}
+.form-container .extra-info {
+  margin-top: 60px;
 }
 /* Ends demo container */
 /* Player skin */

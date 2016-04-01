@@ -13,13 +13,17 @@ var SpotifyPlayer = React.createClass({
 		getDefaultProps: function() {
 			return {
 				noDataFoundText: 'No data found',
-				previewWarningText: 'Only 20 seconds preview'
+				previewWarningText: 'Only 20 seconds preview',
+				onTrackPlayed: undefined,
+				onTrackPaused: undefined
 			}
 		},
 		propTypes: {
 			albumName: React.PropTypes.string.isRequired,
 			artistName: React.PropTypes.string.isRequired,
 			noDataFoundText: React.PropTypes.string,
+			onTrackPlayed: React.PropTypes.func,
+			onTrackPaused: React.PropTypes.func,
 			previewWarningText: React.PropTypes.string
 		},
 		fetchAlbumData: function() {
@@ -60,6 +64,13 @@ var SpotifyPlayer = React.createClass({
 				that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
 			}
 			xhr.send();
+		},
+		firePlayingStatusChangeEvent: function(isPlaying, audioTrack, spotifyTrack) {
+			if (isPlaying && this.props.onTrackPlayed) {
+				this.props.onTrackPlayed(audioTrack, spotifyTrack);
+			} else if(!isPlaying && this.props.onTrackPaused) {
+				this.props.onTrackPaused(audioTrack, spotifyTrack);
+			}
 		},
 		componentDidMount: function() {
 			this.fetchAlbumData();
@@ -111,6 +122,7 @@ var SpotifyPlayer = React.createClass({
 						<TrackList
 							previewWarningText={this.props.previewWarningText}
 							tracks={this.state.albumData.tracks.items}
+							updateTrackPlayingStatus={this.firePlayingStatusChangeEvent}
 							/>
 					</section>
 				);

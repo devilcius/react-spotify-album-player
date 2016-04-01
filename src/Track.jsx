@@ -10,28 +10,42 @@ var Track = React.createClass({
 
     return Math.round(min, -2) + ':' + ((Math.round(sec, -2) < 10) ? ('0' + Math.round(sec, -2)) : Math.round(sec, -2));
   },
+  getDefaultProps: function() {
+    return {
+      onPlayingStatusChange: undefined
+    }
+  },
   propTypes: {
-    track: React.PropTypes.object.isRequired,
-    tooltip: React.PropTypes.string.isRequired
+    onPlayingStatusChange: React.PropTypes.func, //handler on playing status change, function(isPlaying, audioTrack, spotifyTrack),
+    tooltip: React.PropTypes.string.isRequired,
+    track: React.PropTypes.object.isRequired
   },
   playTrack: function(event) {
     var trackUrl = event.target.dataset.url;
     this.setState({isPlaying: true});
+    var that = this;
     if(this.state.playingTrack === null) { //first time track is played
-      var that = this;
       this.setState({isPlaying: true, playingTrack: new Audio(trackUrl)}, function() {
         this.state.playingTrack.play();
+        this.props.onPlayingStatusChange(true, this.state.playingTrack, this.props.track);
         this.state.playingTrack.addEventListener('ended', function() {
           that.setState({isPlaying: false});
+          that.props.onPlayingStatusChange(false, that.state.playingTrack, that.props.track);
         });
       });
 
     } else if(this.state.playingTrack.paused) {
       this.state.playingTrack.play();
-      this.setState({isPlaying: true});
+      this.setState({isPlaying: true}, function() {
+          that.props.onPlayingStatusChange(true, this.state.playingTrack, this.props.track);
+        }
+      );
     } else {
       this.state.playingTrack.pause();
-      this.setState({isPlaying: false});
+      this.setState({isPlaying: false}, function() {
+          that.props.onPlayingStatusChange(false, this.state.playingTrack, this.props.track);
+        }
+      );
     }
   },
   render: function(){
