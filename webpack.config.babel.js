@@ -247,6 +247,9 @@ const distCommon = {
     libraryTarget: 'umd',
     library: config.library
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   entry: config.paths.src,
   externals: {
     'react': {
