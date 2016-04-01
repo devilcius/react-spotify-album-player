@@ -138,7 +138,6 @@ section.spotify-player ul li {
 section.spotify-player ul li span.badge {
     display: inline-block;
     min-width: 10px;
-    padding: 3px 7px;
     font-size: 12px;
     color: #fff;
     vertical-align: middle;
