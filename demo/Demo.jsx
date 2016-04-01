@@ -30,11 +30,13 @@ export default class Demo extends React.Component {
 					<input
 						placeholder="artist name"
 						ref="artist"
+						required
 						type="text"
 						/>
 					<input
 						placeholder="release name"
 						ref="release"
+						required
 						type="text"
 						/>
 					<button >Update</button>
