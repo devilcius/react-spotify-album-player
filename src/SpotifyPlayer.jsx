@@ -36,22 +36,29 @@ var SpotifyPlayer = React.createClass({
 						if(data.tracks.items.length > 0){
 							that.setState({albumData: data})
 						} else {
-							that.setState({playerPlaceholder: that.props.noDataFoundText});
+							that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
 						}
 					});
 				} else {
-					that.setState({playerPlaceholder: that.props.noDataFoundText});
+					that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
 				}
 			};
+			xhr.onerror = function() {
+				that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
+			}
 			xhr.send();
 		},
 		fetchTracks: function(albumId, callback){
 			var xhr = new XMLHttpRequest();
+			var that = this;
 			xhr.open('get', 'https://api.spotify.com/v1/albums/' + albumId);
 			xhr.onload = function () {
 				var response = JSON.parse(xhr.responseText);
 				callback(response);
 			};
+			xhr.onerror = function() {
+				that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
+			}
 			xhr.send();
 		},
 		componentDidMount: function() {
@@ -92,8 +99,10 @@ var SpotifyPlayer = React.createClass({
 			};
 			if(this.state.albumData === null) {
 				return(
-					<div dangerouslySetInnerHTML={{__html: this.state.playerPlaceholder }} >
-					</div>
+					<section className="spotify-player">
+						<div dangerouslySetInnerHTML={{__html: this.state.playerPlaceholder }} >
+						</div>
+					</section>
 				);
 			} else {
 				return(
