@@ -87,6 +87,35 @@ article .description {
 article .description h2 {
     margin: 0;
 }
+/* Demo container */
+.demo-container {
+  width: 100%;
+}
+.demo-container section.spotify-player,
+.demo-container form {
+  display: inline-block;
+  padding: 7px;
+  width: 40%;
+}
+.demo-container form {
+  vertical-align: top;
+}
+.demo-container form input,
+.demo-container form button {
+  border-radius: 5px;
+  display: block;
+  margin-top: 3%;
+}
+.demo-container form input {
+  border: 1px solid #CCC;
+  color: #555;
+  padding: 4px;
+  width: 100%;
+}
+.demo-container form button{
+  float: right;
+}
+/* Ends demo container */
 /* Player skin */
 section.spotify-player {
     background-color: #f3f3f3;
@@ -94,7 +123,7 @@ section.spotify-player {
 }
 section.spotify-player ul {
     padding: 0;
-    list-style: none;    
+    list-style: none;
 }
 section.spotify-player ul li {
     display: block;
@@ -116,7 +145,7 @@ section.spotify-player ul li i.fa {
     background: url(./images/audio_icons_set.jpg) 0 0;
     background-repeat: no-repeat;
     display: inline-block;
-    height: 33px;    
+    height: 33px;
     width: 25px;
 }
 section.spotify-player ul li i.fa-play {
@@ -137,11 +166,11 @@ section.spotify-player div.media-left {
 
 section.spotify-player div.media-left,
 section.spotify-player div.media-body {
-    
-    display: table-cell;    
-    vertical-align: top;    
+
+    display: table-cell;
+    vertical-align: top;
 }
-section.spotify-player .media, 
+section.spotify-player .media,
 section.spotify-player .media-body {
     overflow: hidden;
     zoom: 1;
