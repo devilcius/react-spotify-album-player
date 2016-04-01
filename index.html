@@ -9,7 +9,7 @@
     
 
     
-    <link href="style.24c27c71acf49bd16cfa.css" rel="stylesheet">
+    <link href="style.b9dd5174bfde54794609.css" rel="stylesheet">
     
 
     
@@ -29,7 +29,7 @@
       <article class="pure-u-1">
         <h2>Demonstration</h2>
         <section class="demonstration">
-          <div data-reactid=".1shrhq3hreo" data-react-checksum="-1512660839"><div class="right github-fork-ribbon-wrapper" data-reactid=".1shrhq3hreo.0"><div class="github-fork-ribbon" data-reactid=".1shrhq3hreo.0.0"><a href="https://github.com/devilcius/react-spotify-album-player" data-reactid=".1shrhq3hreo.0.0.0">Fork me on GitHub</a></div></div><p data-reactid=".1shrhq3hreo.1">Click on play button to preview a song.</p><div data-reactid=".1shrhq3hreo.2"><i class="fa fa-spinner fa-spin"></li></div></div>
+          <div data-reactid=".255vgylbls0" data-react-checksum="-525296148"><div class="right github-fork-ribbon-wrapper" data-reactid=".255vgylbls0.0"><div class="github-fork-ribbon" data-reactid=".255vgylbls0.0.0"><a href="https://github.com/devilcius/react-spotify-album-player" data-reactid=".255vgylbls0.0.0.0">Fork me on GitHub</a></div></div><p data-reactid=".255vgylbls0.1">Click on play button to preview a song.</p><div class="demo-container" data-reactid=".255vgylbls0.2"><section class="spotify-player" data-reactid=".255vgylbls0.2.0"><div data-reactid=".255vgylbls0.2.0.0"><i class="fa fa-spinner fa-spin"></i></div></section><div class="form-container" data-reactid=".255vgylbls0.2.1"><form data-reactid=".255vgylbls0.2.1.0"><input placeholder="artist name" required="" type="text" data-reactid=".255vgylbls0.2.1.0.0"/><input placeholder="release name" required="" type="text" data-reactid=".255vgylbls0.2.1.0.1"/><button data-reactid=".255vgylbls0.2.1.0.2">Update</button></form><div class="extra-info" data-reactid=".255vgylbls0.2.1.1"><hr data-reactid=".255vgylbls0.2.1.1.0"/><h5 data-reactid=".255vgylbls0.2.1.1.1">On playing event:</h5><span data-reactid=".255vgylbls0.2.1.1.2">Spotify URI: </span><strong data-reactid=".255vgylbls0.2.1.1.3"></strong></div></div></div></div>
         </section>
 
         <h2>Documentation</h2>
@@ -43,27 +43,27 @@ var SpotifyPlayer = require(&#x27;react-spotify-album-player&#x27;);
 var container = document.getElementById(&#x27;spotify-player&#x27;);
 var ReactDOM = require(&#x27;react-dom&#x27;);
 ReactDOM.render(
-    &lt;SpotifyPlayer 
-        albumName=&quot;Milo Goes to College&quot; 
-        artistName=&quot;Descendents&quot; 
-        noDataFoundText=&quot;No data found&quot; 
-        previewWarningText=&quot;Only 20 seconds preview&quot; 
+    &lt;SpotifyPlayer
+        albumName=&quot;Milo Goes to College&quot;
+        artistName=&quot;Descendents&quot;
+        noDataFoundText=&quot;No data found&quot;
+        previewWarningText=&quot;Only 20 seconds preview&quot;
         showHeader /&gt;,
     container
 );
-</code></pre><p><span>Attributes:</span></p><ul><li><code>albumName</code><span>: Name of the release, mandatory</span></li><li><code>artistName</code><span>: Name of the artist, mandatory</span></li><li><code>noDataFoundText</code><span>: Text to display when album is not found. Default: </span><em><span>&quot;No data found&quot;</span></em><span>.</span></li><li><code>previewWarningText</code><span>: Text to display when hovering play button. Default: </span><em><span>&quot;Only 20 seconds preview&quot;</span></em><span>.</span></li><li><code>showHeader</code><span>: Shows playlist header, with cover thumbnail, album name and album release year. Default: </span><code>false</code><span>;</span></li></ul><h2><span>Todo</span></h2><ul><li><span>Play whole songs in case user has an spotify account</span></li><li><span>Sanity checks in xhr calls</span></li><li><span>Error handling in xhr calls</span></li></ul><h2><span>License</span></h2><p><em><span>react-spotify-album-player</span></em><span> is available under MIT. See LICENSE for more details.</span></p></div></div>
+</code></pre><h2><span>Required options:</span></h2><table><thead><tr><th><span>Property</span></th><th><span>Type</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>albumName</span></td><td><span>string</span></td><td><span>Release&#x27;s name</span></td></tr><tr><td><span>artistName</span></td><td><span>string</span></td><td><span>Artist&#x27;s name</span></td></tr></tbody></table><h3><span>Further options:</span></h3><table><thead><tr><th><span>Property</span></th><th><span>Type</span></th><th><span>Default</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>onTrackPlayed</span></td><td><span>func</span></td><td><code>undefined</code></td><td><span>track played handler: </span><code>function(audioTrack, spotifyTrack) {}</code></td></tr><tr><td><span>onTrackPaused</span></td><td><span>func</span></td><td><code>undefined</code></td><td><span>track paused handler: </span><code>function(audioTrack, spotifyTrack) {}</code></td></tr><tr><td><span>noDataFoundText</span></td><td><span>string</span></td><td><em><span>No data found</span></em></td><td><span>placeholder displayed when there are no matching search results values</span></td></tr><tr><td><span>previewWarningText</span></td><td><span>string</span></td><td><em><span>Only 20 seconds preview</span></em></td><td><span>placeholder preview audio file warning</span></td></tr><tr><td><span>showHeader</span></td><td><span>bool</span></td><td><code>false</code></td><td><span>whether to show player header</span></td></tr></tbody></table><h2><span>Todo</span></h2><ul><li><span>Play whole songs in case user has an spotify account</span></li><li><span>Sanity checks in xhr calls</span></li><li><span>Error handling in xhr calls</span></li></ul><h2><span>License</span></h2><p><em><span>react-spotify-album-player</span></em><span> is available under MIT. See LICENSE for more details.</span></p></div></div>
         </section>
       </article>
     </div>
 
     
-      <script src="manifest.ed94e99c5aa55bc32e67.js"></script>
+      <script src="manifest.06b7c2de7d32b8881bb4.js"></script>
     
       <script src="vendors.a288148a72d05bc85e55.js"></script>
     
-      <script src="style.24c27c71acf49bd16cfa.js"></script>
+      <script src="style.b9dd5174bfde54794609.js"></script>
     
-      <script src="app.273a9bf643197d5b8c7d.js"></script>
+      <script src="app.21487a838de9f8a025aa.js"></script>
     
   </body>
 </html>
