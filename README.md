@@ -1,4 +1,4 @@
-# react-spotify-album-player
+# Spotify Player
 
 This is a simple spotify player for a single album of a given artist.
 

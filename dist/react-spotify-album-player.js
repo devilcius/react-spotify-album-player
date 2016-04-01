@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
-	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
-	else if(typeof exports === 'object')
-		exports["SpotifyPlayer"] = factory(require("react"));
-	else
-		root["SpotifyPlayer"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
-return /******/ (function(modules) { // webpackBootstrap
+var SpotifyPlayer =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -218,7 +209,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+	module.exports = undefined;
 
 /***/ },
 /* 3 */
@@ -362,7 +353,5 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Track;
 
 /***/ }
-/******/ ])
-});
-;
+/******/ ]);
 //# sourceMappingURL=react-spotify-album-player.js.map

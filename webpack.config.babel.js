@@ -202,7 +202,7 @@ if (TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
         },
         {
           test: /\.jsx?$/,
-          loaders: ['babel'],
+          loaders: ['babel-loader'],
           include: [
             config.paths.demo,
             config.paths.src
@@ -244,13 +244,15 @@ const distCommon = {
   devtool: 'source-map',
   output: {
     path: config.paths.dist,
-    libraryTarget: 'umd',
+    libraryTarget: 'var',
     library: config.library
   },
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  entry: config.paths.src,
+  entry: {
+    src: config.paths.src
+  },
   externals: {
     'react': {
       commonjs: 'react',

@@ -1,5 +1,5 @@
 import React from 'react';
-import SpotifyPlayer from '../dist-modules/SpotifyPlayer.js';
+import SpotifyPlayer from '../dist-modules/index.js';
 
 export default class Demo extends React.Component {
 
