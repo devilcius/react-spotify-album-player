@@ -62,7 +62,6 @@ showHeader 				|	bool		| `false` |	 whether to show player header
 
 ## Todo
 
-- [ ] Play whole songs in case user has an spotify account
 - [ ] Sanity checks in xhr calls
 - [ ] Error handling in xhr calls
 
