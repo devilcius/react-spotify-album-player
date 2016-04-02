@@ -135,6 +135,10 @@ section.spotify-player ul li {
     display: block;
     border: 1px solid #f3f3f3;
 }
+section.spotify-player ul li:hover {
+    background-color: #CCC;
+    color: #555;
+}
 section.spotify-player ul li span.badge {
     display: inline-block;
     min-width: 10px;
@@ -144,7 +148,7 @@ section.spotify-player ul li span.badge {
     float: right;
 }
 section.spotify-player ul li i.fa {
-    background: url(./images/audio_icons_set.jpg) 0 0;
+    background: url(./images/audio_icons_set.png) 0 0;
     background-repeat: no-repeat;
     display: inline-block;
     height: 33px;

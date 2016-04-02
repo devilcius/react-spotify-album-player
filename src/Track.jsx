@@ -58,13 +58,13 @@ var Track = React.createClass({
     return(
       <li
         className="list-group-item"
+        onClick={this.playTrack}
+        style={playButtonStyle}
+        title={this.props.tooltip}
         >
         <span className="badge">
           <i
             className={playButtonClassNames}
-            onClick={this.playTrack}
-            style={playButtonStyle}
-            title={this.props.tooltip}
             >
           </i>
 
