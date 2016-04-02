@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import SpotifyPlayer from '../dist-modules/index.js';
 
 export default class Demo extends React.Component {
@@ -14,8 +15,8 @@ export default class Demo extends React.Component {
 	}
 	updateRecord(event) {
 		event.preventDefault();
-		var artist = React.findDOMNode(this.refs.artist).value;
-		var release = React.findDOMNode(this.refs.release).value;
+		var artist = ReactDOM.findDOMNode(this.refs.artist).value;
+		var release = ReactDOM.findDOMNode(this.refs.release).value;
 		this.setState({artistName: artist, albumName: release});
 	}
 	setTrackInfo(audioTrack, spotifyTrack) {

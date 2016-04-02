@@ -1,8 +1,9 @@
 'use strict';
 import React from 'react';
 var Track = React.createClass({
+  audio: null,
   getInitialState: function () {
-    return {playingTrack: null, isPlaying: false};
+    return {isPlaying: false};
   },
   getDuration: function(ms) {
     var min = (ms/1000/60) << 0;
@@ -15,35 +16,38 @@ var Track = React.createClass({
       onPlayingStatusChange: undefined
     }
   },
+  componentDidMount: function() {
+    this.audio = new Audio();
+    this.audio.setAttribute('src', this.props.track.preview_url);
+    this.audio.load();
+  },
+  componentWillUpdate: function(newProps) {
+    if(newProps.track.preview_url !== this.props.track.preview_url) {
+      this.audio.setAttribute('src', newProps.track.preview_url);
+      this.audio.load();
+    }
+  },
   propTypes: {
     onPlayingStatusChange: React.PropTypes.func, //handler on playing status change, function(isPlaying, audioTrack, spotifyTrack),
     tooltip: React.PropTypes.string.isRequired,
     track: React.PropTypes.object.isRequired
   },
-  playTrack: function(event) {
-    var trackUrl = event.target.dataset.url;
-    this.setState({isPlaying: true});
+  playTrack: function() {
     var that = this;
-    if(this.state.playingTrack === null) { //first time track is played
-      this.setState({isPlaying: true, playingTrack: new Audio(trackUrl)}, function() {
-        this.state.playingTrack.play();
-        this.props.onPlayingStatusChange(true, this.state.playingTrack, this.props.track);
-        this.state.playingTrack.addEventListener('ended', function() {
+    if(this.audio.paused) {
+      this.setState({isPlaying: true}, function() {
+        this.audio.play();
+        this.props.onPlayingStatusChange(true, this.audio, this.props.track);
+        this.audio.addEventListener('ended', function() {
           that.setState({isPlaying: false});
-          that.props.onPlayingStatusChange(false, that.state.playingTrack, that.props.track);
+          that.props.onPlayingStatusChange(false, that.audio, that.props.track);
         });
       });
 
-    } else if(this.state.playingTrack.paused) {
-      this.state.playingTrack.play();
-      this.setState({isPlaying: true}, function() {
-          that.props.onPlayingStatusChange(true, this.state.playingTrack, this.props.track);
-        }
-      );
-    } else {
-      this.state.playingTrack.pause();
+    } else  {
+      this.audio.pause();
       this.setState({isPlaying: false}, function() {
-          that.props.onPlayingStatusChange(false, this.state.playingTrack, this.props.track);
+          that.props.onPlayingStatusChange(false, this.audio, this.props.track);
         }
       );
     }
@@ -58,7 +62,6 @@ var Track = React.createClass({
         <span className="badge">
           <i
             className={playButtonClassNames}
-            data-url={this.props.track.preview_url}
             onClick={this.playTrack}
             style={playButtonStyle}
             title={this.props.tooltip}
