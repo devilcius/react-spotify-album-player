@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.0.7] - 2016-04-29
+### Changed
+- Usability. Track plays on clicking parent element
+
 ## [0.0.5] - 2016-04-02
 ### Changed
 - Fixed: tracks weren't loading properly after refreshing data
@@ -29,6 +33,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Basic version
 
+[0.0.7]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.5...v0.0.7
 [0.0.5]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.2...v0.0.3

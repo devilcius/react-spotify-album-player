@@ -124,22 +124,25 @@ section.spotify-player {
     background-color: #f3f3f3;
     width: 400px;
 }
-section.spotify-player ul {
+section.spotify-player div {
     padding: 0;
     list-style: none;
 }
-section.spotify-player ul li {
+section.spotify-player div a {
+    color: #555;
     display: block;
+    font-size: 1.3em;
     margin-bottom: -1px;
     padding: 10px 15px;
     display: block;
     border: 1px solid #f3f3f3;
+    text-decoration: none;
 }
-section.spotify-player ul li:hover {
+section.spotify-player div a:hover {
     background-color: #CCC;
     color: #555;
 }
-section.spotify-player ul li span.badge {
+section.spotify-player div a span.badge {
     display: inline-block;
     min-width: 10px;
     font-size: 12px;
@@ -147,17 +150,17 @@ section.spotify-player ul li span.badge {
     vertical-align: middle;
     float: right;
 }
-section.spotify-player ul li i.fa {
+section.spotify-player div a i.fa {
     background: url(./images/audio_icons_set.png) 0 0;
     background-repeat: no-repeat;
     display: inline-block;
     height: 33px;
     width: 25px;
 }
-section.spotify-player ul li i.fa-play {
+section.spotify-player div a i.fa-play {
     background-position: -90px -48px;
 }
-section.spotify-player ul li i.fa-pause {
+section.spotify-player div a i.fa-pause {
     background-position: -135px -48px;
 }
 section.spotify-player .media {

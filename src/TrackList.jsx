@@ -28,9 +28,9 @@ var TrackList = React.createClass({
       )
     });
     return (
-      <ul className="list-group">
+      <div className="list-group">
         {trackNodesData}
-      </ul>
+      </div>
     );
   }
 });

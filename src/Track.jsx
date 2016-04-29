@@ -32,7 +32,8 @@ var Track = React.createClass({
     tooltip: React.PropTypes.string.isRequired,
     track: React.PropTypes.object.isRequired
   },
-  playTrack: function() {
+  playTrack: function(event) {
+    event.preventDefault();
     var that = this;
     if(this.audio.paused) {
       this.setState({isPlaying: true}, function() {
@@ -56,7 +57,7 @@ var Track = React.createClass({
     var playButtonClassNames = this.state.isPlaying ? 'fa fa-pause' : 'fa fa-play';
     var playButtonStyle = {cursor: 'default'};
     return(
-      <li
+      <a href="#"
         className="list-group-item"
         onClick={this.playTrack}
         style={playButtonStyle}
@@ -67,10 +68,9 @@ var Track = React.createClass({
             className={playButtonClassNames}
             >
           </i>
-
         </span>
         {this.props.track.track_number}. {this.props.track.name} ({this.getDuration(this.props.track.duration_ms)})
-      </li>
+      </a>
     );
   }
 });

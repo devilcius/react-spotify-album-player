@@ -13,7 +13,7 @@ var SpotifyPlayer = React.createClass({
 		getDefaultProps: function() {
 			return {
 				noDataFoundText: 'No data found',
-				previewWarningText: 'Only 20 seconds preview',
+				previewWarningText: 'Only 30 seconds preview',
 				onTrackPlayed: undefined,
 				onTrackPaused: undefined
 			}
