@@ -9,7 +9,7 @@
     
 
     
-    <link href="style.9733c0368e53db3768c4.css" rel="stylesheet">
+    <link href="style.d615dd6ffab97888c309.css" rel="stylesheet">
     
 
     
@@ -29,7 +29,7 @@
       <article class="pure-u-1">
         <h2>Demonstration</h2>
         <section class="demonstration">
-          <div data-reactid=".1h20efaa5fk" data-react-checksum="376478042"><div class="right github-fork-ribbon-wrapper" data-reactid=".1h20efaa5fk.0"><div class="github-fork-ribbon" data-reactid=".1h20efaa5fk.0.0"><a href="https://github.com/devilcius/react-spotify-album-player" data-reactid=".1h20efaa5fk.0.0.0">Fork me on GitHub</a></div></div><p data-reactid=".1h20efaa5fk.1">Click on play button to preview a song.</p><div class="demo-container" data-reactid=".1h20efaa5fk.2"><section class="spotify-player" data-reactid=".1h20efaa5fk.2.0"><div data-reactid=".1h20efaa5fk.2.0.0"><i class="fa fa-spinner fa-spin"></i></div></section><div class="form-container" data-reactid=".1h20efaa5fk.2.1"><form data-reactid=".1h20efaa5fk.2.1.0"><input placeholder="artist name" required="" type="text" data-reactid=".1h20efaa5fk.2.1.0.0"/><input placeholder="release name" required="" type="text" data-reactid=".1h20efaa5fk.2.1.0.1"/><button data-reactid=".1h20efaa5fk.2.1.0.2">Update</button></form><div class="extra-info" data-reactid=".1h20efaa5fk.2.1.1"><hr data-reactid=".1h20efaa5fk.2.1.1.0"/><h5 data-reactid=".1h20efaa5fk.2.1.1.1">On playing event:</h5><span data-reactid=".1h20efaa5fk.2.1.1.2">Spotify URI: </span><strong data-reactid=".1h20efaa5fk.2.1.1.3"></strong></div></div></div></div>
+          <div data-reactid=".12fl3x0ogzk" data-react-checksum="664837540"><div class="right github-fork-ribbon-wrapper" data-reactid=".12fl3x0ogzk.0"><div class="github-fork-ribbon" data-reactid=".12fl3x0ogzk.0.0"><a href="https://github.com/devilcius/react-spotify-album-player" data-reactid=".12fl3x0ogzk.0.0.0">Fork me on GitHub</a></div></div><p data-reactid=".12fl3x0ogzk.1">Click on play button to preview a song.</p><div class="demo-container" data-reactid=".12fl3x0ogzk.2"><section class="spotify-player" data-reactid=".12fl3x0ogzk.2.0"><div data-reactid=".12fl3x0ogzk.2.0.0"><i class="fa fa-spinner fa-spin"></i></div></section><div class="form-container" data-reactid=".12fl3x0ogzk.2.1"><form data-reactid=".12fl3x0ogzk.2.1.0"><input placeholder="artist name" required="" type="text" data-reactid=".12fl3x0ogzk.2.1.0.0"/><input placeholder="release name" required="" type="text" data-reactid=".12fl3x0ogzk.2.1.0.1"/><button data-reactid=".12fl3x0ogzk.2.1.0.2">Update</button></form><div class="extra-info" data-reactid=".12fl3x0ogzk.2.1.1"><hr data-reactid=".12fl3x0ogzk.2.1.1.0"/><h5 data-reactid=".12fl3x0ogzk.2.1.1.1">On playing event:</h5><span data-reactid=".12fl3x0ogzk.2.1.1.2">Spotify URI: </span><strong data-reactid=".12fl3x0ogzk.2.1.1.3"></strong></div></div></div></div>
         </section>
 
         <h2>Documentation</h2>
@@ -48,22 +48,24 @@ ReactDOM.render(
         artistName=&quot;Descendents&quot;
         noDataFoundText=&quot;No data found&quot;
         previewWarningText=&quot;Only 20 seconds preview&quot;
-        showHeader /&gt;,
+        showHeader
+        token
+ /&gt;,
     container
 );
-</code></pre><h2><span>Required options:</span></h2><table><thead><tr><th><span>Property</span></th><th><span>Type</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>albumName</span></td><td><span>string</span></td><td><span>Release&#x27;s name</span></td></tr><tr><td><span>artistName</span></td><td><span>string</span></td><td><span>Artist&#x27;s name</span></td></tr></tbody></table><h3><span>Further options:</span></h3><table><thead><tr><th><span>Property</span></th><th><span>Type</span></th><th><span>Default</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>onTrackPlayed</span></td><td><span>func</span></td><td><code>undefined</code></td><td><span>track played handler: </span><code>function(audioTrack, spotifyTrack) {}</code></td></tr><tr><td><span>onTrackPaused</span></td><td><span>func</span></td><td><code>undefined</code></td><td><span>track paused handler: </span><code>function(audioTrack, spotifyTrack) {}</code></td></tr><tr><td><span>noDataFoundText</span></td><td><span>string</span></td><td><em><span>No data found</span></em></td><td><span>placeholder displayed when there are no matching search results values</span></td></tr><tr><td><span>previewWarningText</span></td><td><span>string</span></td><td><em><span>Only 20 seconds preview</span></em></td><td><span>placeholder preview audio file warning</span></td></tr><tr><td><span>showHeader</span></td><td><span>bool</span></td><td><code>false</code></td><td><span>whether to show player header</span></td></tr></tbody></table><h2><span>Todo</span></h2><ul><li><span>Sanity checks in xhr calls</span></li><li><span>Error handling in xhr calls</span></li></ul><h2><span>License</span></h2><p><em><span>react-spotify-album-player</span></em><span> is available under MIT. See LICENSE for more details.</span></p></div></div>
+</code></pre><h2><span>Required options:</span></h2><table><thead><tr><th><span>Property</span></th><th><span>Type</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>albumName</span></td><td><span>string</span></td><td><span>Release&#x27;s name</span></td></tr><tr><td><span>artistName</span></td><td><span>string</span></td><td><span>Artist&#x27;s name</span></td></tr><tr><td><span>token</span></td><td><span>string</span></td><td><span>A valid spotify web api access token</span></td></tr></tbody></table><h3><span>Further options:</span></h3><table><thead><tr><th><span>Property</span></th><th><span>Type</span></th><th><span>Default</span></th><th><span>Description</span></th></tr></thead><tbody><tr><td><span>onTrackPlayed</span></td><td><span>func</span></td><td><code>undefined</code></td><td><span>track played handler: </span><code>function(audioTrack, spotifyTrack) {}</code></td></tr><tr><td><span>onTrackPaused</span></td><td><span>func</span></td><td><code>undefined</code></td><td><span>track paused handler: </span><code>function(audioTrack, spotifyTrack) {}</code></td></tr><tr><td><span>noDataFoundText</span></td><td><span>string</span></td><td><em><span>No data found</span></em></td><td><span>placeholder displayed when there are no matching search results values</span></td></tr><tr><td><span>previewWarningText</span></td><td><span>string</span></td><td><em><span>Only 20 seconds preview</span></em></td><td><span>placeholder preview audio file warning</span></td></tr><tr><td><span>showHeader</span></td><td><span>bool</span></td><td><code>false</code></td><td><span>whether to show player header</span></td></tr></tbody></table><h2><span>Todo</span></h2><ul><li><span>Sanity checks in xhr calls</span></li><li><span>Error handling in xhr calls</span></li></ul><h2><span>License</span></h2><p><em><span>react-spotify-album-player</span></em><span> is available under MIT. See LICENSE for more details.</span></p></div></div>
         </section>
       </article>
     </div>
 
     
-      <script src="manifest.14de7e99a49aa37261c8.js"></script>
+      <script src="manifest.c3cbcfa80c04543448ea.js"></script>
     
-      <script src="vendors.a288148a72d05bc85e55.js"></script>
+      <script src="vendors.0611febe4ae2a4e90689.js"></script>
     
-      <script src="style.9733c0368e53db3768c4.js"></script>
+      <script src="style.d615dd6ffab97888c309.js"></script>
     
-      <script src="app.afe5b7ec1e8f37656843.js"></script>
+      <script src="app.7d58bdd409540ce9a48e.js"></script>
     
   </body>
 </html>
