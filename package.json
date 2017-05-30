@@ -3,7 +3,7 @@
   "description": "Spotify player for a specific artist's album",
   "author": "Marcos",
   "user": "devilcius",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "start": "webpack-dev-server",
     "test": "karma start",

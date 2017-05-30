@@ -40,7 +40,9 @@ ReactDOM.render(
         artistName="Descendents"
         noDataFoundText="No data found"
         previewWarningText="Only 20 seconds preview"
-        showHeader />,
+        showHeader
+        token
+ />,
     container
 );
 ```
@@ -49,6 +51,7 @@ Property			|	Type		|	Description
 :-----------------------|:--------------|:--------------------------------
 albumName 				|	string		|	 Release's name
 artistName 				|	string		|	 Artist's name
+token    				|	string		|	 A valid spotify web api access token
 
 ### Further options:
 
