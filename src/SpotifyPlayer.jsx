@@ -43,7 +43,6 @@ class SpotifyPlayer extends React.Component {
                     }
                 } else {
                     that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
-                    console.log("Error", xhr.statusText);
                 }
             }
         };
@@ -54,14 +53,13 @@ class SpotifyPlayer extends React.Component {
         var that = this;
         xhr.open('get', 'https://api.spotify.com/v1/albums/' + albumId);
         xhr.setRequestHeader('Authorization', 'Bearer ' + this.props.token);
-        xhr.onreadystatechange = function (oEvent) {
+        xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
                     callback(response);
                 } else {
                     that.setState({albumData: null, playerPlaceholder: that.props.noDataFoundText});
-                    console.log("Error", xhr.statusText);
                 }
             }
         };
@@ -76,7 +74,7 @@ class SpotifyPlayer extends React.Component {
     }
     componentDidMount() {
         if (this.props.token === null) {
-            alert("A valid access token is needed to access spotify API");
+            alert('A valid access token is needed to access spotify API');
             return;
         }
         this.fetchAlbumData();
@@ -137,28 +135,29 @@ class SpotifyPlayer extends React.Component {
             }
         }
     }
-    ;
 
     SpotifyPlayer.propTypes = {
         albumName: React.PropTypes.string.isRequired,
         artistName: React.PropTypes.string.isRequired,
-        listGroupItemBadgeClassName: React.PropTypes.string,
         listGroupClassName: React.PropTypes.string,
+        listGroupItemBadgeClassName: React.PropTypes.string,
         listGroupItemClassName: React.PropTypes.string,
         noDataFoundText: React.PropTypes.string,
-        onTrackPlayed: React.PropTypes.func,
         onTrackPaused: React.PropTypes.func,
+        onTrackPlayed: React.PropTypes.func,
         previewWarningText: React.PropTypes.string,
+        showHeader: React.PropTypes.bool,
         token: React.PropTypes.string
     };
     SpotifyPlayer.defaultProps = {
-        listGroupItemBadgeClassName: 'badge',
         listGroupClassName: 'list-group',
+        listGroupItemBadgeClassName: 'badge',
         listGroupItemClassName: 'list-group-item',
         noDataFoundText: 'No data found',
         onTrackPaused: undefined,
         onTrackPlayed: undefined,
         previewWarningText: 'Only 30 seconds preview',
+        showHeader: true,
         token: 'required to work' //https://developer.spotify.com/web-api/
     };
 

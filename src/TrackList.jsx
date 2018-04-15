@@ -38,6 +38,7 @@ TrackList.propTypes = {
     listGroupItemBadgeClassName: React.PropTypes.string,
     listGroupClassName: React.PropTypes.string,
     listGroupItemClassName: React.PropTypes.string,
+    previewWarningText: React.PropTypes.string,
     tracks: React.PropTypes.array,
     updateTrackPlayingStatus: React.PropTypes.func
 };
