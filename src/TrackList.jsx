@@ -32,7 +32,6 @@ class TrackList extends React.Component {
                 );
     }
 }
-;
 
 TrackList.propTypes = {
     listGroupItemBadgeClassName: React.PropTypes.string,

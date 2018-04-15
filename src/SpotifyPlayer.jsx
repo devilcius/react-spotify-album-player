@@ -26,7 +26,7 @@ class SpotifyPlayer extends React.Component {
         queryString += '&type=album';
         xhr.open('get', url + queryString);
         xhr.setRequestHeader('Authorization', 'Bearer ' + this.props.token);
-        xhr.onreadystatechange = function (event) {
+        xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
@@ -123,8 +123,8 @@ class SpotifyPlayer extends React.Component {
                         <section className="spotify-player">
                             {playlistHeader()}
                             <TrackList
-                                listGroupItemBadgeClassName={this.props.listGroupItemBadgeClassName}
                                 listGroupClassName={this.props.listGroupClassName}
+                                listGroupItemBadgeClassName={this.props.listGroupItemBadgeClassName}
                                 listGroupItemClassName={this.props.listGroupItemClassName}
                                 previewWarningText={this.props.previewWarningText}
                                 tracks={this.state.albumData.tracks.items}
