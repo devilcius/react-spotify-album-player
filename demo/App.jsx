@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Fork className="right" project={pkgInfo.user + '/' + pkgInfo.name} />
-        <p>Click on play button to preview a song.</p>
+        <p>Click the play button to preview a song.</p>
         <Demo />
       </div>
     );

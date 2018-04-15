@@ -57,6 +57,9 @@ token    				|	string		|	 A valid spotify web api access token
 
 Property			|	Type		|	Default | Description
 :-----------------------|:--------------|:--------|:--------------------------------
+listGroupItemBadgeClassName 		|	string		| 'badge'           |	 class name for badge element
+listGroupClassName 			|	string		| 'list-group'      |	 class name for list group element
+listGroupItemClassName 			|	string		| 'list-group-item' |	 class name for list group item element
 onTrackPlayed 				|	func			|	`undefined` | track played handler: `function(audioTrack, spotifyTrack) {}`
 onTrackPaused 				|	func |	`undefined`			|	 track paused handler: `function(audioTrack, spotifyTrack) {}`
 noDataFoundText 			|	string		| _No data found_ |	 placeholder displayed when there are no matching search results values
