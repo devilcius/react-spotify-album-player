@@ -25,7 +25,7 @@ npm install react-spotify-album-player
 
 ## Demo
 
-http://devilcius.github.io/react-spotify-album-player/
+https://devilcius.github.io/react-spotify-album-player/
 
 ## Basic Usage
 
