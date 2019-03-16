@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/react-spotify-album-player/static/js/runtime~main.5004ec71.js"
   },
   {
-    "revision": "2e5811aa66de0631c02b",
-    "url": "/react-spotify-album-player/static/js/main.25c1e461.chunk.js"
+    "revision": "e18a9ceeec6bcdf4e107",
+    "url": "/react-spotify-album-player/static/js/main.6afff9f4.chunk.js"
   },
   {
     "revision": "d11f9a41d706381a87d6",
     "url": "/react-spotify-album-player/static/js/2.7afb739b.chunk.js"
   },
   {
-    "revision": "2e5811aa66de0631c02b",
+    "revision": "e18a9ceeec6bcdf4e107",
     "url": "/react-spotify-album-player/static/css/main.928b64f0.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/react-spotify-album-player/static/css/2.39d84c0e.chunk.css"
   },
   {
-    "revision": "289a88961c5677fa0e116eb687897e28",
+    "revision": "6d15dfaf98a6bd55b35fbcdc73cdc135",
     "url": "/react-spotify-album-player/index.html"
   }
 ];
