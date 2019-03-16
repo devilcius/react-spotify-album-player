@@ -8,7 +8,8 @@ export default class Demo extends React.Component {
 		super(props);
 		this.clientId = '0454e14b019d4236b4cf5fd4fd9525ee';
 		this.scopes = 'user-top-read';
-		this.redirectUri = 'http://localhost:3000/';
+		this.redirectUri = 'https://devilcius.github.io/react-spotify-album-player/';
+		// this.redirectUri = 'http://localhost:3000/';
 		this.login = this.login.bind(this);
 		this.updateRecord = this.updateRecord.bind(this);
 		this.state = {
@@ -64,7 +65,7 @@ export default class Demo extends React.Component {
 			<div>
 			{this.state.spotifyToken !== null &&
 				<div className="demo-container">
-					<p>Click on a song to preview it</p>					
+					<p>Click on a song to preview it</p>
 				 <SpotifyPlayer
 					albumName={this.state.albumName}
 					artistName={this.state.artistName}
