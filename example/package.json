@@ -1,0 +1,25 @@
+{
+  "name": "react-spotify-album-player",
+  "homepage": "https://devilcius.github.io/react-spotify-album-player",
+  "description": "Spotify player for a specific artist's album",
+  "user": "devilcius",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "highlight.js": "^9.15.6",
+    "prop-types": "^15.6.2",
+    "purecss": "^1.0.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-ghfork": "^0.5.1",
+    "react-scripts": "^1.1.4",
+    "react-spotify-album-player": "link:.."
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

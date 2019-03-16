@@ -1,9 +1,11 @@
 'use strict';
 import React from 'react';
+import PropTypes from 'prop-types';
+
 class Track extends React.Component {
-    
+
     static audio;
-    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,7 +23,6 @@ class Track extends React.Component {
     }
 
     componentDidMount() {
-
         this.audio.setAttribute('src', this.props.track.preview_url);
         this.audio.load();
     }
@@ -55,8 +56,9 @@ class Track extends React.Component {
         var playButtonClassNames = this.state.isPlaying ? 'fa fa-pause' : 'fa fa-play';
         var playButtonStyle = {cursor: 'default'};
         return(
-                <div className={this.props.listGroupItemClassName} onClick={this.playTrack} >
-                    <a href="#"                       
+                <li className={this.props.listGroupItemClassName} onClick={this.playTrack} >
+                    <a href="#"
+                       className={this.props.listGroupItemLink}
                        style={playButtonStyle}
                        title={this.props.tooltip}
                        >
@@ -67,21 +69,22 @@ class Track extends React.Component {
                             className={playButtonClassNames}
                             >
                         </i>
-                    </span>                    
-                </div>
+                    </span>
+                </li>
                 );
     }
 }
 
 Track.propTypes = {
-    listGroupItemBadgeClassName: React.PropTypes.string,
-    listGroupItemClassName: React.PropTypes.string,
-    onPlayingStatusChange: React.PropTypes.func, //handler on playing status change, function(isPlaying, audioTrack, spotifyTrack),
-    tooltip: React.PropTypes.string.isRequired,
-    track: React.PropTypes.object.isRequired
+    listGroupItemBadgeClassName: PropTypes.string,
+    listGroupItemClassName: PropTypes.string,
+    listGroupItemLink: PropTypes.string,
+    onPlayingStatusChange: PropTypes.func, //handler on playing status change, function(isPlaying, audioTrack, spotifyTrack),
+    tooltip: PropTypes.string.isRequired,
+    track: PropTypes.object.isRequired
 };
 
-Track.defaultProps = {    
+Track.defaultProps = {
     onPlayingStatusChange: undefined
 };
-module.exports = Track;
+export { Track };

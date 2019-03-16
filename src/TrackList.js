@@ -1,6 +1,8 @@
 'use strict';
 import React from 'react';
-import Track from './Track';
+import { Track } from './Track';
+import PropTypes from 'prop-types';
+
 class TrackList extends React.Component {
 
     constructor(props) {
@@ -19,6 +21,7 @@ class TrackList extends React.Component {
                         key={index}
                         listGroupItemBadgeClassName={this.props.listGroupItemBadgeClassName}
                         listGroupItemClassName={this.props.listGroupItemClassName}
+                        listGroupItemLink={this.props.listGroupItemLink}
                         onPlayingStatusChange={this.trackChangedStatus}
                         tooltip={this.props.previewWarningText}
                         track={track}
@@ -26,24 +29,25 @@ class TrackList extends React.Component {
                     );
         }.bind(this));
         return (
-                <div className={this.props.listGroupClassName}>
+                <ul className={this.props.listGroupClassName}>
                     {trackNodesData}
-                </div>
+                </ul>
                 );
     }
 }
 
 TrackList.propTypes = {
-    listGroupItemBadgeClassName: React.PropTypes.string,
-    listGroupClassName: React.PropTypes.string,
-    listGroupItemClassName: React.PropTypes.string,
-    previewWarningText: React.PropTypes.string,
-    tracks: React.PropTypes.array,
-    updateTrackPlayingStatus: React.PropTypes.func
+    listGroupItemBadgeClassName: PropTypes.string,
+    listGroupClassName: PropTypes.string,
+    listGroupItemClassName: PropTypes.string,
+    listGroupItemLink: PropTypes.string,
+    previewWarningText: PropTypes.string,
+    tracks: PropTypes.array,
+    updateTrackPlayingStatus: PropTypes.func
 };
 
-TrackList.defaultProps = {    
+TrackList.defaultProps = {
     tracks: [],
     updateTrackPlayingStatus: undefined
 };
-module.exports = TrackList;
+export { TrackList };

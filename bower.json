@@ -15,16 +15,13 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "demo",
-    "lib",
+    "example",
     "node_modules",
-    "dist_modules",
     "script",
     "gh-pages",
     "index.js",
-    "karma.conf.js",
-    "webpack.config.babel.js",
+    "package-lock.json",
     "package.json",
-    "style.css"
+    "yarn.lock"
   ]
 }
