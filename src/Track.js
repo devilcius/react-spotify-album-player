@@ -42,7 +42,7 @@ class Track extends React.Component {
                 this.audio.addEventListener('ended', function () {
                     this.setState({isPlaying: false});
                     this.props.onPlayingStatusChange(false, this.audio, this.props.track);
-                });
+                }.bind(this));
             });
         } else {
             this.audio.pause();
