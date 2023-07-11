@@ -7,13 +7,13 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^11.8.0",
     "prop-types": "^15.6.2",
-    "purecss": "^1.0.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "purecss": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-ghfork": "^0.5.1",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^5.0.1",
     "react-spotify-album-player": "link:.."
   },
   "scripts": {
