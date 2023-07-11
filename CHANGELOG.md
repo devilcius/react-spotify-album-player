@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [1.1.0] - 2023-07-11
+### Changed
+- Improved api calls handling
+- Changed react classes to functional components
+- Dependencies upgraded to latest versions
+- Fixed bugs
+
+## [1.0.1] - 2019-03-16
+### Changed
+- Bugs fixed
+
+## [1.0.0] - 2019-03-16
+### Changed
+- Improved demo
+- Vulnerabilities fixed
+
 ## [0.0.9] - 2018-04-15
 ### Changed
 - Uses ES2015 Classes.
@@ -43,6 +60,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Basic version
 
+[1.1.0]: https://github.com/devilcius/react-spotify-album-player/compare/v1.0.1...v1.1.0
+[1.0.1]: https://github.com/devilcius/react-spotify-album-player/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.9...v1.0.0
 [0.0.9]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.5...v0.0.7
