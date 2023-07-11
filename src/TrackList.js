@@ -1,39 +1,40 @@
-'use strict';
 import React from 'react';
 import { Track } from './Track';
 import PropTypes from 'prop-types';
 
-class TrackList extends React.Component {
+function TrackList({
+    listGroupItemBadgeClassName,
+    listGroupClassName,
+    listGroupItemClassName,
+    listGroupItemLink,
+    previewWarningText,
+    tracks,
+    updateTrackPlayingStatus
+}) {
 
-    constructor(props) {
-        super(props);
+    const trackChangedStatus = (isPlaying, audioTrack, spotifyTrack) => {
+        if (updateTrackPlayingStatus) {
+            updateTrackPlayingStatus(isPlaying, audioTrack, spotifyTrack);
+        }
+    };
 
-        this.trackChangedStatus = this.trackChangedStatus.bind(this);
-    }
+    const trackNodesData = tracks.map((track, index) => (
+        <Track
+            key={index}
+            listGroupItemBadgeClassName={listGroupItemBadgeClassName}
+            listGroupItemClassName={listGroupItemClassName}
+            listGroupItemLink={listGroupItemLink}
+            onPlayingStatusChange={trackChangedStatus}
+            tooltip={previewWarningText}
+            track={track}
+        />
+    ));
 
-    trackChangedStatus(isPlaying, audioTrack, spotifyTrack) {
-        this.props.updateTrackPlayingStatus(isPlaying, audioTrack, spotifyTrack);
-    }
-    render() {
-        var trackNodesData = this.props.tracks.map(function (track, index) {
-            return(
-                    <Track
-                        key={index}
-                        listGroupItemBadgeClassName={this.props.listGroupItemBadgeClassName}
-                        listGroupItemClassName={this.props.listGroupItemClassName}
-                        listGroupItemLink={this.props.listGroupItemLink}
-                        onPlayingStatusChange={this.trackChangedStatus}
-                        tooltip={this.props.previewWarningText}
-                        track={track}
-                        />
-                    );
-        }.bind(this));
-        return (
-                <ul className={this.props.listGroupClassName}>
-                    {trackNodesData}
-                </ul>
-                );
-    }
+    return (
+        <ul className={listGroupClassName}>
+            {trackNodesData}
+        </ul>
+    );
 }
 
 TrackList.propTypes = {
@@ -50,4 +51,5 @@ TrackList.defaultProps = {
     tracks: [],
     updateTrackPlayingStatus: undefined
 };
+
 export { TrackList };

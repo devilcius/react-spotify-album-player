@@ -25,14 +25,16 @@
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
-    "react": ">= 16.0.0",
-    "react-dom": ">= 16.0.0"
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/plugin-external-helpers": "^7.22.5",
     "@babel/preset-env": "^7.22.7",
     "@babel/preset-react": "^7.22.5",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",    
     "@svgr/rollup": "^8.0.1",
     "cross-env": "^7.0.3",
     "gh-pages": "^5.0.0",
@@ -41,8 +43,6 @@
     "react-scripts": "^5.0.1",
     "rollup": "^3.26.2",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-url": "^3.0.1"

@@ -1,85 +1,91 @@
-'use strict';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-class Track extends React.Component {
+function Track({
+    listGroupItemBadgeClassName,
+    listGroupItemClassName,
+    listGroupItemLink,
+    onPlayingStatusChange,
+    tooltip,
+    track
+}) {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const audioRef = useRef(new Audio());
 
-    static audio;
+    const getDuration = (ms) => {
+        var min = Math.floor(ms / 1000 / 60);
+        var sec = Math.floor((ms / 1000) % 60);
+        return `${min}:${sec < 10 ? `0${sec}` : sec}`;
+    }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isPlaying: false
+    useEffect(() => {
+        audioRef.current.src = track.preview_url;
+        audioRef.current.load();
+
+        return () => {
+            audioRef.current.pause();
+            audioRef.current.src = '';
         };
-        this.audio = new Audio();
-        this.getDuration = this.getDuration.bind(this);
-        this.playTrack = this.playTrack.bind(this);
-    }
+    }, [track]);
 
-    getDuration(ms) {
-        var min = (ms / 1000 / 60) << 0;
-        var sec = (ms / 1000) % 60;
-        return Math.round(min, -2) + ':' + ((Math.round(sec, -2) < 10) ? ('0' + Math.round(sec, -2)) : Math.round(sec, -2));
-    }
-
-    componentDidMount() {
-        this.audio.setAttribute('src', this.props.track.preview_url);
-        this.audio.load();
-    }
-    componentWillUpdate(newProps) {
-        if (newProps.track.preview_url !== this.props.track.preview_url) {
-            this.audio.setAttribute('src', newProps.track.preview_url);
-            this.audio.load();
-        }
-    }
-
-    playTrack(event) {
-        event.preventDefault();
-        if (this.audio.paused) {
-            this.setState({isPlaying: true}, function () {
-                this.audio.play();
-                this.props.onPlayingStatusChange(true, this.audio, this.props.track);
-                this.audio.addEventListener('ended', function () {
-                    this.setState({isPlaying: false});
-                    this.props.onPlayingStatusChange(false, this.audio, this.props.track);
-                }.bind(this));
-            });
-        } else {
-            this.audio.pause();
-            this.setState({isPlaying: false}, function () {
-                this.props.onPlayingStatusChange(false, this.audio, this.props.track);
+    useEffect(() => {
+        const handleEnd = () => {
+            setIsPlaying(false);
+            if (onPlayingStatusChange) {
+                onPlayingStatusChange(false, audioRef.current, track);
             }
-            );
+        };
+
+        audioRef.current.addEventListener('ended', handleEnd);
+
+        return () => {
+            audioRef.current.removeEventListener('ended', handleEnd);
+        };
+    }, [track, onPlayingStatusChange]);
+
+    const playTrack = (event) => {
+        event.preventDefault();
+
+        if (audioRef.current.paused) {
+            setIsPlaying(true);
+            audioRef.current.play();
+            if (onPlayingStatusChange) {
+                onPlayingStatusChange(true, audioRef.current, track);
+            }
+        } else {
+            audioRef.current.pause();
+            setIsPlaying(false);
+            if (onPlayingStatusChange) {
+                onPlayingStatusChange(false, audioRef.current, track);
+            }
         }
-    }
-    render() {
-        var playButtonClassNames = this.state.isPlaying ? 'fa fa-pause' : 'fa fa-play';
-        var playButtonStyle = {cursor: 'default'};
-        return(
-                <li className={this.props.listGroupItemClassName} onClick={this.playTrack} >
-                    <a href="#"
-                       className={this.props.listGroupItemLink}
-                       style={playButtonStyle}
-                       title={this.props.tooltip}
-                       >
-                        {this.props.track.track_number}. {this.props.track.name} ({this.getDuration(this.props.track.duration_ms)})
-                    </a>
-                    <span className={this.props.listGroupItemBadgeClassName}>
-                        <i
-                            className={playButtonClassNames}
-                            >
-                        </i>
-                    </span>
-                </li>
-                );
-    }
+    };
+
+    const playButtonClassNames = isPlaying ? 'fa fa-pause' : 'fa fa-play';
+    const playButtonStyle = { cursor: 'default' };
+
+    return (
+        <li className={listGroupItemClassName} onClick={playTrack} >
+            <a
+                href="#"
+                className={listGroupItemLink}
+                style={playButtonStyle}
+                title={tooltip}
+            >
+                {`${track.track_number}. ${track.name} (${getDuration(track.duration_ms)})`}
+            </a>
+            <span className={listGroupItemBadgeClassName}>
+                <i className={playButtonClassNames}></i>
+            </span>
+        </li>
+    );
 }
 
 Track.propTypes = {
     listGroupItemBadgeClassName: PropTypes.string,
     listGroupItemClassName: PropTypes.string,
     listGroupItemLink: PropTypes.string,
-    onPlayingStatusChange: PropTypes.func, //handler on playing status change, function(isPlaying, audioTrack, spotifyTrack),
+    onPlayingStatusChange: PropTypes.func,
     tooltip: PropTypes.string.isRequired,
     track: PropTypes.object.isRequired
 };
@@ -87,4 +93,5 @@ Track.propTypes = {
 Track.defaultProps = {
     onPlayingStatusChange: undefined
 };
+
 export { Track };
