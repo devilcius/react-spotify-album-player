@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.1] - 2023-07-12
+### Changed
+- Handles null track previews
 
 ## [1.1.0] - 2023-07-11
 ### Changed
@@ -60,6 +63,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Basic version
 
+[1.1.1]: https://github.com/devilcius/react-spotify-album-player/compare/v1.1.1...v1.1.1
 [1.1.0]: https://github.com/devilcius/react-spotify-album-player/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/devilcius/react-spotify-album-player/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/devilcius/react-spotify-album-player/compare/v0.0.9...v1.0.0
