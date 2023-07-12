@@ -6,8 +6,8 @@ import { SpotifyPlayer } from 'react-spotify-album-player';
 export default function Demo() {
     const clientId = '0454e14b019d4236b4cf5fd4fd9525ee';
     const scopes = 'user-top-read';
-    // const redirectUri = 'http://localhost:3000/';
-	const redirectUri = 'https://devilcius.github.io/react-spotify-album-player/';
+    const redirectUri = 'http://localhost:3000/';
+	// const redirectUri = 'https://devilcius.github.io/react-spotify-album-player/';
     const [spotifyToken, setSpotifyToken] = useState(null);
     const [spotifyUser, setSpotifyUser] = useState(null);
     const [spotifyUri, setSpotifyUri] = useState(null);

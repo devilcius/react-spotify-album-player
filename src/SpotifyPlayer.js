@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { TrackList } from './TrackList';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import { TrackList } from "./TrackList";
+import PropTypes from "prop-types";
 
 function SpotifyPlayer({
   albumName,
@@ -24,18 +24,17 @@ function SpotifyPlayer({
     artistName
   });
 
-
   async function fetchAlbumData(albumName, artistName) {
     const url = `https://api.spotify.com/v1/search?q=album:${albumName} artist:${artistName}&type=album`;
     const headers = {
-      'Authorization': 'Bearer ' + token
+      Authorization: "Bearer " + token,
     };
 
     try {
-      const response = await fetch(url, { method: 'GET', headers });
+      const response = await fetch(url, { method: "GET", headers });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
@@ -45,41 +44,61 @@ function SpotifyPlayer({
           const tracksData = await fetchTracks(data.albums.items[0].id);
 
           if (tracksData.tracks.items.length > 0) {
-            setState(prevState => ({ ...prevState, albumData: tracksData }));
+            setState((prevState) => ({ ...prevState, albumData: tracksData }));
           } else {
-            setState(prevState => ({ ...prevState, albumData: null, playerPlaceholder: noDataFoundText }));
+            setState((prevState) => ({
+              ...prevState,
+              albumData: null,
+              playerPlaceholder: noDataFoundText,
+            }));
           }
         } catch (error) {
-          console.error('Error:', error);
-          setState(prevState => ({ ...prevState, albumData: null, playerPlaceholder: noDataFoundText }));
+          console.error("Error:", error);
+          setState((prevState) => ({
+            ...prevState,
+            albumData: null,
+            playerPlaceholder: noDataFoundText,
+          }));
         }
       } else {
-        setState(prevState => ({ ...prevState, albumData: null, playerPlaceholder: noDataFoundText }));
+        setState((prevState) => ({
+          ...prevState,
+          albumData: null,
+          playerPlaceholder: noDataFoundText,
+        }));
       }
     } catch (error) {
-      console.error('Error:', error);
-      setState(prevState => ({ ...prevState, albumData: null, playerPlaceholder: noDataFoundText }));
+      console.error("Error:", error);
+      setState((prevState) => ({
+        ...prevState,
+        albumData: null,
+        playerPlaceholder: noDataFoundText,
+      }));
     }
   }
 
   async function fetchTracks(albumId) {
     const url = `https://api.spotify.com/v1/albums/${albumId}`;
     const headers = {
-      'Authorization': 'Bearer ' + token
+      Authorization: "Bearer " + token,
     };
 
     try {
-      const response = await fetch(url, { method: 'GET', headers });
+      const response = await fetch(url, { method: "GET", headers });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('Error:', error);
-      setState(prevState => ({ ...prevState, albumData: null, playerPlaceholder: noDataFoundText }));
+      console.error("Error:", error);
+      setState((prevState) => ({
+        ...prevState,
+        albumData: null,
+        playerPlaceholder: noDataFoundText,
+      }));
       throw error;
     }
   }
@@ -94,7 +113,7 @@ function SpotifyPlayer({
 
   useEffect(() => {
     if (token === null) {
-      console.error('A valid access token is needed to access spotify API');
+      console.error("A valid access token is needed to access spotify API");
       return;
     }
     fetchAlbumData(albumName, artistName);
@@ -125,7 +144,7 @@ function SpotifyPlayer({
     return null;
   }
 
-  if (state.albumData === null) {
+  if (state.albumData === null || state.albumData.tracks.items.length === 0) {
     return (
       <section className="spotify-player">
         <div dangerouslySetInnerHTML={{ __html: state.playerPlaceholder }} />
@@ -161,20 +180,20 @@ SpotifyPlayer.propTypes = {
   onTrackPlayed: PropTypes.func,
   previewWarningText: PropTypes.string,
   showHeader: PropTypes.bool,
-  token: PropTypes.string
+  token: PropTypes.string,
 };
 
 SpotifyPlayer.defaultProps = {
-  listGroupClassName: 'list-group',
-  listGroupItemBadgeClassName: 'badge',
-  listGroupItemClassName: 'list-group-item',
-  listGroupItemLink: '',
-  noDataFoundText: 'No data found',
+  listGroupClassName: "list-group",
+  listGroupItemBadgeClassName: "badge",
+  listGroupItemClassName: "list-group-item",
+  listGroupItemLink: "",
+  noDataFoundText: "No data found",
   onTrackPaused: undefined,
   onTrackPlayed: undefined,
-  previewWarningText: 'Only 30 seconds preview',
+  previewWarningText: "Only 30 seconds preview",
   showHeader: true,
-  token: null
+  token: null,
 };
 
 export { SpotifyPlayer };

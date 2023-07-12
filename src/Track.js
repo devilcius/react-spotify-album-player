@@ -10,6 +10,8 @@ function Track({
     track
 }) {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [showPlayButton, setShowPlayButton] = useState(true);
+    const [notice, setNoticie] = useState(tooltip);
     const audioRef = useRef(new Audio());
 
     const getDuration = (ms) => {
@@ -19,13 +21,18 @@ function Track({
     }
 
     useEffect(() => {
-        audioRef.current.src = track.preview_url;
-        audioRef.current.load();
+        if (track.preview_url === null) { // some tracks don't have preview_url
+            setShowPlayButton(false);
+            setNoticie('Preview not available');
+        } else {
+            audioRef.current.src = track.preview_url;
+            audioRef.current.load();
 
-        return () => {
-            audioRef.current.pause();
-            audioRef.current.src = '';
-        };
+            return () => {
+                audioRef.current.pause();
+                audioRef.current.src = '';
+            };
+        }
     }, [track]);
 
     useEffect(() => {
@@ -70,13 +77,13 @@ function Track({
                 href="#"
                 className={listGroupItemLink}
                 style={playButtonStyle}
-                title={tooltip}
+                title={notice}
             >
                 {`${track.track_number}. ${track.name} (${getDuration(track.duration_ms)})`}
             </a>
-            <span className={listGroupItemBadgeClassName}>
+            {showPlayButton && <span className={listGroupItemBadgeClassName}>
                 <i className={playButtonClassNames}></i>
-            </span>
+            </span>}
         </li>
     );
 }
